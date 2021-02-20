@@ -1,4 +1,5 @@
 {
-    "serverPath": "",
-    "backupPath": ""
+    "worldPath": "",
+    "backupPath": "",
+    "maxBackupSize": 0
 }
