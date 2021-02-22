@@ -9,28 +9,29 @@ After archiving is complete, checks the size of the directory versus the maxBack
 the script starts deleting the oldest files in the archive until the file size is under max."""
 
 class backup():
-    '''Utilities for backing up the server and cleaning the directory.'''
+    """Utilities for backing up the server and cleaning the directory."""
 
     def __init__(self):
         pass
 
     def checkDirSize(self, dirpath, size):
-        '''Returns True if directory is greater in size than value provided.'''
+        """Returns True if directory is greater in size than value provided."""
 
         basepath = Path(dirpath)
         return sum(ospath.getsize(f) for f in basepath.glob('**/*') if f.is_file()) > size
 
     def getoldest(self, dirpath):
-        '''Returns the oldest file in the supplied path.'''
+        """Returns the oldest file in the supplied path."""
         return min([f for f in Path(dirpath).glob('**/*')], key=ospath.getctime)
-    
+
     def archive(self, worldPath, backupPath):
-        '''Archives worldpath into backupPath'''
+        """Archives worldpath into backupPath"""
         zipName = ospath.join(backupPath,'VHworlds' + datetime.now().strftime('%Y%m%d%H%M%S'))
         shutil.make_archive(zipName, 'zip', base_dir=worldPath)
 
     def deleteold(self, backupPath, maxsize):
-        '''Checks current size of backupPath, and deletes oldest files until it is smaller than maxsize'''
+        """Checks current size of backupPath, and deletes oldest
+        files until it is smaller than maxsize"""
 
         maxarch = maxsize * 1048576
         oldestfile = (backupPath)

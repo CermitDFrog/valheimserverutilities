@@ -1,7 +1,7 @@
 import setuptools
 
 setuptools.setup(
-    name="valheimserverutilities",
+    name="vhserverutils",
     version='0.0.1',
     author='CermitDFrogknight'
 )

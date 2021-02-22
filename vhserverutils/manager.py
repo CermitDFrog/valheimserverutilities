@@ -1,4 +1,4 @@
-import vhserverutils
+from . import serverutils
 
 
 def execute_command(args, config):
@@ -9,5 +9,5 @@ def execute_command(args, config):
 
 def _backup(config, *args):
     '''Runs backup process for server.'''
-    bkp = vhserverutils.backup()
+    bkp = serverutils.backup()
     bkp.archive(config.worldPath, config.backupPath)
