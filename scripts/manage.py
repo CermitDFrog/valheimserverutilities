@@ -8,5 +8,6 @@ def main():
     from vhserverutils.manager import execute_command
     execute_command(sys.argv, config)
 
-if __name__=='__main__':
+
+if __name__ == '__main__':
     main()

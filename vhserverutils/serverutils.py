@@ -23,7 +23,7 @@ class backup():
 
     def archive(self, worldPath, backupPath):
         """Archives worldpath into backupPath"""
-        zipName = ospath.join(backupPath,'VHworlds' + datetime.now().strftime('%Y%m%d%H%M%S'))
+        zipName = ospath.join(backupPath, f"VHworlds{datetime.now().strftime('%Y%m%d%H%M%S')}")
         shutil.make_archive(zipName, 'zip', base_dir=worldPath)
 
     def deleteold(self, backupPath, maxsize):
