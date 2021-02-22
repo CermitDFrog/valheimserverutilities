@@ -4,9 +4,6 @@ from datetime import datetime
 from os import path as ospath
 from pathlib import Path
 
-scriptDescription = """Archives worlds found in specified worlds directory of config into a zipfile named VHworldsyyyymmddhhmmss in the specified directory in the config file.
-After archiving is complete, checks the size of the directory versus the maxBackupSize. If the directory size is greater than the specified max, 
-the script starts deleting the oldest files in the archive until the file size is under max."""
 
 class backup():
     """Utilities for backing up the server and cleaning the directory."""
